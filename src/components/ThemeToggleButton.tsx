@@ -15,11 +15,11 @@ const RoundButton = styled(IconButton, transientOptions)`
     ${({ $colorMode }) => ($colorMode === 'light' ? 'black' : 'white')};
   & svg {
     width: ${iconSize}px;
-    height: ${iconSize}px;
+    height: ${iconSize}px;>
   }
 `;
 
-function ThemeToggleButton(props: ThemeToggleButtonProps): JSX.Element {
+const ThemeToggleButton = (props: ThemeToggleButtonProps): JSX.Element => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
@@ -32,6 +32,6 @@ function ThemeToggleButton(props: ThemeToggleButtonProps): JSX.Element {
       {...props}
     />
   );
-}
+};
 
 export default ThemeToggleButton;

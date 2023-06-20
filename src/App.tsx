@@ -5,8 +5,6 @@ import { Box, Button, Flex, Image, Link, Text } from '@chakra-ui/react';
 
 import ThemeToggleButton from './components/ThemeToggleButton';
 
-const textFontSizes = [16, 18, 24, 30];
-
 const App = () => {
   const x = 'x';
 
