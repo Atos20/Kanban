@@ -3,6 +3,8 @@ import {
   Button,
   ButtonGroup,
   Checkbox,
+  Input,
+  Stack,
   useColorModeValue,
   VStack,
 } from '@chakra-ui/react';
@@ -37,6 +39,13 @@ const App = () => {
         </Checkbox>
       </VStack>
       <ThemeToggleButton pos="fixed" bottom="2" right="2" />
+
+      <Stack spacing={3}>
+        <Input placeholder="extra small size" size="xs" />
+        <Input placeholder="small size" size="sm" />
+        <Input placeholder="medium size" size="md" />
+        <Input placeholder="large size" size="lg" />
+      </Stack>
     </Box>
   );
 };

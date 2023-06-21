@@ -3,6 +3,7 @@ import { extendTheme, ThemeConfig } from '@chakra-ui/react';
 import buttonOverrides from './buttonOverrides';
 import checkboxOverrides from './checkboxOverrides';
 import { colors } from './colors';
+import inputOverrides from './inputOverrides';
 import typography from './typography';
 
 const config: ThemeConfig = {
@@ -16,6 +17,7 @@ export const primaryTheme = extendTheme({
   components: {
     Button: buttonOverrides,
     Checkbox: checkboxOverrides,
+    Input: inputOverrides,
   },
   config,
   styles: {

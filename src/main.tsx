@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 
-import { primaryTheme as theme } from './ions/theme';
+import { primaryTheme as theme } from './ions/themes/theme';
 import App from './App';
 
 const container = document.getElementById('root');
