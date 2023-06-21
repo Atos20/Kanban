@@ -1,7 +1,11 @@
-import { motion } from 'framer-motion';
-import { FC, useState } from 'react';
-
-import { Box, Button, Flex, Image, Link, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Checkbox,
+  Stack,
+  VStack,
+} from '@chakra-ui/react';
 
 import ThemeToggleButton from './components/ThemeToggleButton';
 
@@ -10,7 +14,27 @@ const App = () => {
 
   return (
     <Box>
-      <ThemeToggleButton pos="fixed" bottom="2" right="2" />
+      <VStack>
+        <ButtonGroup gap={4}>
+          <Button variant="primary" size="md">
+            Button Primary(L)
+          </Button>
+          <Button variant="primarySmall">Button Primary (S)</Button>
+          <ThemeToggleButton pos="fixed" bottom="2" right="2" />
+        </ButtonGroup>
+        <ButtonGroup gap={4}>
+          <Button variant="secondary">Button Secondary</Button>
+          <Button variant="destructive">Button Desctructive</Button>
+          <ThemeToggleButton pos="fixed" bottom="2" right="2" />
+        </ButtonGroup>
+      </VStack>
+
+      <Stack spacing={5} direction="row">
+        <Checkbox isDisabled>Checkbox</Checkbox>
+        <Checkbox isDisabled defaultChecked>
+          Checkbox
+        </Checkbox>
+      </Stack>
     </Box>
   );
 };
