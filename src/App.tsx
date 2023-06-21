@@ -3,14 +3,14 @@ import {
   Button,
   ButtonGroup,
   Checkbox,
-  Stack,
+  useColorModeValue,
   VStack,
 } from '@chakra-ui/react';
 
 import ThemeToggleButton from './components/ThemeToggleButton';
 
 const App = () => {
-  const x = 'x';
+  const color = useColorModeValue('red', 'pink');
 
   return (
     <Box>
@@ -22,19 +22,21 @@ const App = () => {
           <Button variant="primarySmall">Button Primary (S)</Button>
           <ThemeToggleButton pos="fixed" bottom="2" right="2" />
         </ButtonGroup>
+
         <ButtonGroup gap={4}>
           <Button variant="secondary">Button Secondary</Button>
           <Button variant="destructive">Button Desctructive</Button>
-          <ThemeToggleButton pos="fixed" bottom="2" right="2" />
         </ButtonGroup>
       </VStack>
 
-      <Stack spacing={5} direction="row">
-        <Checkbox isDisabled>Checkbox</Checkbox>
-        <Checkbox isDisabled defaultChecked>
-          Checkbox
+      <VStack spacing={5} direction="row">
+        <Checkbox>Themed Checkbox</Checkbox>
+        <Checkbox variant="circular">Themed Circular Checkbox</Checkbox>
+        <Checkbox defaultChecked colorScheme={color}>
+          Themed Circular Checkbox
         </Checkbox>
-      </Stack>
+      </VStack>
+      <ThemeToggleButton pos="fixed" bottom="2" right="2" />
     </Box>
   );
 };
