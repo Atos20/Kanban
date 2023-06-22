@@ -1,20 +1,24 @@
 import { checkboxAnatomy } from '@chakra-ui/anatomy';
 import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react';
+import { mode } from '@chakra-ui/theme-tools';
 
 import { colors } from './colors';
 
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(checkboxAnatomy.keys);
 
-const baseStyle = definePartsStyle({
+const baseStyle = definePartsStyle((props) => ({
   control: {
     padding: 2,
-    borderRadius: 3,
+    borderRadius: 2,
+    bg: colors.whiteAlpha[100],
+    borderColor: 'none',
     _active: {
-      bg: colors.primary[500],
+      bg: mode(colors.primary[500], colors.primary[500])(props),
     },
-    _activeLink: {
-      bg: colors.primary[500],
+    _checked: {
+      bg: mode(colors.primary[500], colors.primary[500])(props),
+      borderColor: colors.primary[500],
     },
   },
   icon: {
@@ -36,7 +40,7 @@ const baseStyle = definePartsStyle({
     fontSize: '50px',
     color: colors.gray[800],
   },
-});
+}));
 
 // Defining a custom variant
 const variantCircular = definePartsStyle({

@@ -25,7 +25,15 @@ export const primaryTheme = extendTheme({
       'html, body, #root': {
         h: '100vh',
         minH: '100vh',
+        '--chakra-ui-focus-ring-color': '#635Fc7',
       },
     },
+  },
+  shadows: {
+    // This is also possible. Not sure I like inject this into
+    // an existing theme section.
+    // It creates a CSS variable named --chakra-shadows-focus-ring-color
+    // 'focus-ring-color': '#635Fc7',
+    outline: '0 0 0 3px var(--chakra-ui-focus-ring-color)',
   },
 });
